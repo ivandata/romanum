@@ -51,5 +51,40 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@types/styled-components": "^5.1.11",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "commitlint": "^13.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-sonarjs": "^0.9.1",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2",
+    "styled-components": "^5.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "bash -c tsc",
+    "*.{ts,tsx}": "eslint --fix --max-warnings=0",
+    "src/**/*{ts,tsx,js,jsx,mdx,md,json,css,html}": "prettier --write"
+  },
+  "eslintIgnore": [
+    "**/{__tests__,__stories__,__mocks__}/**",
+    "**/*.{test,spec,stories,example}.{js,jsx,ts,tsx}"
+  ],
+  "volta": {
+    "node": "14.16.1",
+    "npm": "7.13.0",
+    "yarn": "1.22.10"
   }
 }
