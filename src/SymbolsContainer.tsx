@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 const romanValuesType: {
   [key: string]: number;
@@ -50,9 +51,9 @@ export function romanToArabic(value: string): number {
 
 export function getMatchedRoman(value: string): string[] {
   return [
-    ...value
-      .match(/(M*)((CM)*)((D)*)([I]*?)([DC]*(XC)?)((C)?)([LX]*(IX)?)([IV]*)/)!
-      [Symbol.iterator](),
+    ...(value
+      .match(/(M*)((CM)*)((D)*)([I]*?)([DC]*(XC)?)((C)?)([LX]*(IX)?)([IV]*)/)
+      ?.[Symbol.iterator]() ?? []),
   ]
     .splice(1)
     .filter((x, i) => i % 2 == 0 && x);
@@ -72,45 +73,46 @@ const SymbolsContainer: FunctionComponent<SymbolsContainerProps> = ({
   console.log(total);
   const isRoman = kind === 'roman';
   const isArabic = kind === 'arabic';
+  const isBigger = isMobile || total > 7999;
+  console.log(isMobile);
   return (
     <SSymbolContainer>
-      { isArabic && total && <STotal>={total}</STotal> }
+      {isArabic && total && <STotal>={total}</STotal>}
       <SSymbolList>
         {getMatchedRoman(values).map(
           (x, i) =>
             x && (
               <SSymbol
+                isBigger={isBigger}
                 key={i + x}
-                data-label={isRoman ? romanToArabic(x) : x}
-              >
+                data-label={isRoman ? romanToArabic(x) : x}>
                 {isArabic ? romanToArabic(x) : x}
               </SSymbol>
             ),
         )}
       </SSymbolList>
-      { isRoman && total > 0 && <STotal>={total}</STotal> }
+      {isRoman && total > 0 && <STotal>={total}</STotal>}
     </SSymbolContainer>
   );
 };
 
 export default SymbolsContainer;
 
-const SSymbolContainer = styled.div`
-`;
+const SSymbolContainer = styled.div``;
 
 const SSymbolList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
   display: flex;
-  font-size: 7rem;
   margin-top: 4rem;
   font-family: 'Nanum Myeongjo', serif;
 `;
 
-const SSymbol = styled.div`
+const SSymbol = styled.div<{ isBigger: boolean }>`
   position: relative;
   margin-bottom: 2rem;
+  font-size: ${({ isBigger }) => (isBigger ? 4 : 7)}rem;
 
   & + & {
     margin-left: 10px;
@@ -123,6 +125,7 @@ const SSymbol = styled.div`
     bottom: -1.4rem;
     left: 0;
     color: #ff00ff;
+    font-weight: bold;
     display: block;
     width: 100%;
     text-align: center;

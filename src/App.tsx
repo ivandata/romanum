@@ -121,6 +121,7 @@ const SMainContainer = styled.main`
   align-items: center;
   justify-content: space-between;
   min-width: 320px;
+  padding: 1rem;
 `;
 
 const SLabel = styled.label`
