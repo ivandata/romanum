@@ -28,10 +28,19 @@ You can install this app on your computer or mobile device.
 - Tap ‘Add to Home Screen.’ 
 - Enter the name for the app then tap add. 
 
+## Prerequisites
+You should have the following dependencies installed already:
 
-## Run and test Hey-question locally
+- [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+- [node](https://nodejs.org/en/download/)
+- [volta](https://github.com/volta-cli/volta) (or at least [nvm](https://github.com/nvm-sh/nvm))
+
+## Run Romanum locally
 To lunch the app locally:
-- Run `yarn install`
-- Run `yarn start`
-- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
+```sh
+$ nvm use (only if you using nvm instead volta) 
+$ yarn install
+$ yarn start
+```
+The browser should open automatically. 
+I it not happens, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
