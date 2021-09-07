@@ -2072,15 +2072,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*":
-  version "14.14.31"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
-  integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
-
-"@types/node@^12.0.0":
-  version "12.20.17"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.17.tgz#ffd44c2801fc527a6fe6e86bc9b900261df1c87e"
-  integrity sha512-so8EHl4S6MmatPS0f9sE1ND94/ocbcEshW5OpyYthRqeRpiYyW2uXYTo/84kmfdfeNrDycARkvuiXl6nO40NGg==
+"@types/node@*", "@types/node@^16.7.13":
+  version "16.7.13"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.13.tgz#86fae356b03b5a12f2506c6cf6cd9287b205973f"
+  integrity sha512-pLUPDn+YG3FYEt/pHI74HmnJOWzeR+tOIQzUx93pi9M7D8OE7PSLr97HboXwk5F+JS+TLtWuzCOW97AHjmOXXA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -2154,10 +2149,10 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha512-RJJrrySY7A8havqpGObOB4W92QXKJo63/jFLLgpvOtsGUqbQZ9Sbgl35KMm1DjC6j7AvmmU2bIno+3IyEaemaw==
 
-"@types/styled-components@^5.1.11":
-  version "5.1.11"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.11.tgz#a3a1bc0f2cdad7318d8ce219ee507e6b353503b5"
-  integrity sha512-u8g3bSw9KUiZY+S++gh+LlURGraqBe3MC5I5dygrNjGDHWWQfsmZZRTJ9K9oHU2CqWtxChWmJkDI/gp+TZPQMw==
+"@types/styled-components@^5.1.14":
+  version "5.1.14"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.14.tgz#e9cf8cdb5eef9d139628183a84c083f630635d67"
+  integrity sha512-d6P1/tyNytqKwam3cQXq7a9uPtovc/mdAs7dBiz1YbDdNIT3X4WmuFU78YdSYh84TXVuhOwezZ3EeKuNBhwsHQ==
   dependencies:
     "@types/hoist-non-react-statics" "*"
     "@types/react" "*"
